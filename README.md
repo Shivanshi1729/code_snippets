@@ -32,3 +32,14 @@ async function downloadIt(){
 }
 downloadIt()
 ```
+
+- download slideshare slides `js`
+
+```js
+reg = /https:\/\/image\.slidesharecdn\.com\/[^ ]* 1024w/g
+a = document.body.innerHTML.match(reg)
+b = []
+for(i=0;i<a.length();i++){
+    b.push(a[i].split(' ')[0])
+}
+```
