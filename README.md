@@ -15,20 +15,20 @@ function downloadCanvasAsImage(name){
         document.body.appendChild(a);
         a.click();
         a.remove();
-      };
-      xhr.open('GET', canvasImage);
-      xhr.send();
+    };
+    xhr.open('GET', canvasImage);
+    xhr.send();
 }
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 async function downloadIt(){
-	x = parseInt(document.getElementById('page_count').textContent)
-	for(let i=0;i<x;i++){
-  		downloadCanvasAsImage('se' + i.toString());
-  		document.getElementById('next').click();
-  		await sleep(500);
-	}
+    x = parseInt(document.getElementById('page_count').textContent)
+    for(let i=0;i<x;i++){
+        downloadCanvasAsImage('se' + i.toString());
+        document.getElementById('next').click();
+        await sleep(500);
+    }
 }
 downloadIt()
 ```
